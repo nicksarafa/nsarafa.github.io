@@ -3,6 +3,7 @@ import babel from 'gulp-babel'
 import sass from 'gulp-sass'
 import sourceMaps from 'gulp-sourcemaps'
 import del from 'del'
+import nano from 'gulp-cssnano'
 
 const paths = {
   srcDir: 'src',
@@ -32,6 +33,7 @@ gulp.task('js', ['cleanJs'], () => {
 gulp.task('css', ['cleanCss'], () => {
   return gulp.src(paths.allSrcCss)
     .pipe(sass())
+    .pipe(nano())
     .pipe(gulp.dest(paths.distDir))
 })
 

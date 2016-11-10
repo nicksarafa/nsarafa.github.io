@@ -1,3 +1,6 @@
+### Custom template
+*.swp
+
 ### Jekyll template
 _site/
 .sass-cache/
