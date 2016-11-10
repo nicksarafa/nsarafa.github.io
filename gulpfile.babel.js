@@ -32,4 +32,6 @@ gulp.task('css', ['clean'], () => {
     .pipe(gulp.dest(paths.distDir))
 })
 
+gulp.task('build', ['clean', 'css', 'js'])
+
 gulp.task('default', ['watch'])
