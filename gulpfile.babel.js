@@ -3,42 +3,44 @@ import babel from 'gulp-babel'
 import sass from 'gulp-sass'
 import sourceMaps from 'gulp-sourcemaps'
 import del from 'del'
-import nano from 'gulp-cssnano'
+import cssNano from 'gulp-cssnano'
 
 const paths = {
   srcDir: 'src',
-  allSrcCss: 'src/css/*.scss',
-  allSrcJs: 'src/js/*.js',
+  allSrcStyles: 'src/styles/*.scss',
+  allSrcScripts: 'src/scripts/*.js',
   distDir: 'docs',
-  allDistCss: 'docs/css/*.css',
-  allDistJs: 'docs/js/*.js',
+  distScriptsDir: 'docs/scripts',
+  distStylesDir: 'docs/styles',
+  allDistStyles: 'docs/styles/*.css',
+  allDistScripts: 'docs/scripts/*.js',
   gulpFile: 'gulpfile.babel.js',
 }
 
 gulp.task('clean', () => del(paths.distDir))
-gulp.task('cleanCss', () => del(paths.allDistCss))
-gulp.task('cleanJs', () => del(paths.allDistJs))
+gulp.task('cleanStyles', () => del(paths.allDistStyles))
+gulp.task('cleanScripts', () => del(paths.allDistScripts))
 
 gulp.task('watch', () => {
-  gulp.watch(paths.allSrcCss, ['css'])
-  gulp.watch(paths.allSrcJs, ['js'])
+  gulp.watch(paths.allSrcStyles, ['styles'])
+  gulp.watch(paths.allSrcScripts, ['scripts'])
 })
 
-gulp.task('js', ['cleanJs'], () => {
-  return gulp.src(paths.allSrcJs)
+gulp.task('scripts', ['cleanScripts'], () => {
+  return gulp.src(paths.allSrcScripts)
     .pipe(babel())
-    .pipe(gulp.dest(paths.distDir))
+    .pipe(gulp.dest(paths.distScriptsDir))
 })
 
-gulp.task('css', ['cleanCss'], () => {
-  return gulp.src(paths.allSrcCss)
+gulp.task('styles', ['cleanStyles'], () => {
+  return gulp.src(paths.allSrcStyles)
     .pipe(sourceMaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourceMaps.write())
-    .pipe(nano())
-    .pipe(gulp.dest(paths.distDir))
+    .pipe(cssNano())
+    .pipe(gulp.dest(paths.distStylesDir))
 })
 
-gulp.task('build', ['clean', 'css', 'js'])
+gulp.task('build', ['clean', 'styles', 'scripts'])
 
 gulp.task('default', ['watch'])
