@@ -19,12 +19,37 @@ $color: (
   turquoise : rgba(33, 182, 166, 1),
 );
 
+$fib: (
+  0,
+  1,
+  1,
+  2,
+  3,
+  5,
+  8,
+  13,
+  21,
+  34,
+  55,
+  89,
+  144,
+  233,
+  377,
+  610,
+  987,
+  1597,
+  2584,
+  4181,
+  6765,
+  10946,
+);
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
   clear: both;
-  content: ' ';
+  content: '';
 }
 
 html {
@@ -34,8 +59,24 @@ html {
 
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  margin: auto;
+  max-width: nth($fib, 16);
 }
 
 code {
   font-family: Courier, Monaco, monospace;
+}
+
+nav {
+  display: flex;
+  flex: 1;
+  height: nth($fib, 12);
+
+  div { margin: auto; }
+}
+
+.clearfix {
+  clear: both;
+  content: '';
+  height: nth($fib, 8);
 }
