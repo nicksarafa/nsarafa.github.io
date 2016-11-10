@@ -44,14 +44,12 @@ $fib: (
   10946,
 );
 
-$max-width: 610px;
-
 *,
 *:before,
 *:after {
   box-sizing: border-box;
   clear: both;
-  content: ' ';
+  content: '';
 }
 
 html {
@@ -67,4 +65,14 @@ body {
 
 code {
   font-family: Courier, Monaco, monospace;
+}
+
+nav {
+  height: nth($fib, 12)
+}
+
+.clearfix {
+  clear: both;
+  content: '';
+  height: nth($fib, 8);
 }
