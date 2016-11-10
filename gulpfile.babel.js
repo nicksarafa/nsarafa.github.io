@@ -5,6 +5,7 @@ import sourceMaps from 'gulp-sourcemaps'
 import del from 'del'
 import cssNano from 'gulp-cssnano'
 import sassdoc from 'sassdoc'
+import imagemin from 'gulp-imagemin'
 
 const paths = {
   srcDir: 'src',
@@ -16,6 +17,8 @@ const paths = {
   allDistStyles: 'docs/styles/*.css',
   allDistScripts: 'docs/scripts/*.js',
   gulpFile: 'gulpfile.babel.js',
+  allImages: 'src/images/*',
+  distImagesDir: 'docs/images',
 }
 
 gulp.task('clean', () => del(paths.distDir))
@@ -41,6 +44,12 @@ gulp.task('styles', ['cleanStyles'], () => {
     .pipe(sourceMaps.write())
     .pipe(cssNano())
     .pipe(gulp.dest(paths.distStylesDir))
+})
+
+gulp.task('images', () => {
+  gulp.src(paths.allImages)
+    .pipe(imagemin())
+    .pipe(gulp.dest(paths.distImagesDir))
 })
 
 gulp.task('build', ['clean', 'styles', 'scripts'])
