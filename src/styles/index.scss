@@ -1,8 +1,23 @@
-$blue      : rgba(40, 122, 169, 1);
-$charcoal  : rgba(64, 64, 64, 1);
-$orange    : rgba(220, 99, 5, 1);
-$silver    : rgba(192, 192, 192, 0.9);
-$turquoise : rgba(33, 182, 166, 1);
+/// @name color
+/// @param {string | $color_name} $color
+/// @returns {string | color} pre-defined color
+/// @link https://coolors.co/404040-287aa9-21b6a6-c0c0c0-dc6305
+
+@function color($color_name) {
+  @if map_has_key($color, $color_name) {
+    @return map_get($color, $color_name);
+  }
+  @warn 'undefined `#{$color_name}` in colors';
+  @return null;
+}
+
+$color: (
+  blue      : rgba(40, 122, 169, 1),
+  charcoal  : rgba(64, 64, 64, 1),
+  orange    : rgba(220, 99, 5, 1),
+  silver    : rgba(192, 192, 192, 0.9),
+  turquoise : rgba(33, 182, 166, 1),
+);
 
 *,
 *:before,
@@ -18,6 +33,7 @@ html {
 }
 
 body {
+  background: color(charcoal);
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
