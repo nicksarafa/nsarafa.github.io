@@ -3,23 +3,36 @@
   "version": "1.0.0",
   "description": "Temp blog powered by GitHub pages + Gulp",
   "main": "index.js",
+  "author": "nsarafa",
+  "license": "MIT",
   "scripts": {
+    "start": "gulp",
     "test": "gulp test"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ],
+    "compact": false
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.16.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.7",
+    "babel-preset-latest": "^6.16.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nsarafa/nsarafa.github.io.git"
   },
-  "author": "nsarafa",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nsarafa/nsarafa.github.io/issues"
   },
-  "homepage": "https://github.com/nsarafa/nsarafa.github.io#readme",
-  "devDependencies": {
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^2.2.0"
-  }
+  "homepage": "https://github.com/nsarafa/nsarafa.github.io#readme"
 }
