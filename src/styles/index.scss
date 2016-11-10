@@ -68,7 +68,11 @@ code {
 }
 
 nav {
-  height: nth($fib, 12)
+  display: flex;
+  flex: 1;
+  height: nth($fib, 12);
+
+  div { margin: auto; }
 }
 
 .clearfix {
