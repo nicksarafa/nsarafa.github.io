@@ -7,7 +7,7 @@ import nano from 'gulp-cssnano'
 
 const paths = {
   srcDir: 'src',
-  allSrcCss: 'src/css/*.css',
+  allSrcCss: 'src/css/*.scss',
   allSrcJs: 'src/js/*.js',
   distDir: 'docs',
   allDistCss: 'docs/css/*.css',
@@ -32,7 +32,9 @@ gulp.task('js', ['cleanJs'], () => {
 
 gulp.task('css', ['cleanCss'], () => {
   return gulp.src(paths.allSrcCss)
-    .pipe(sass())
+    .pipe(sourceMaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sourceMaps.write())
     .pipe(nano())
     .pipe(gulp.dest(paths.distDir))
 })
