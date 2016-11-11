@@ -75,8 +75,22 @@ nav {
   div { margin: auto; }
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .clearfix {
   clear: both;
   content: '';
   height: nth($fib, 8);
+}
+
+.headshot {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
