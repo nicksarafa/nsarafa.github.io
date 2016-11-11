@@ -1,4 +1,2 @@
-'use strict';
-
-console.log('Hello, world');
-console.log('Hello, world');
+// scripts here
+"use strict";
