@@ -11,17 +11,17 @@ const paths = {
   srcDir: 'src',
   allSrcStyles: 'src/styles/*.scss',
   allSrcScripts: 'src/scripts/*.js',
-  distDir: 'docs',
-  distScriptsDir: 'dist/scripts',
-  distStylesDir: 'dist/styles',
-  allDistStyles: 'dist/styles/*.css',
-  allDistScripts: 'dist/scripts/*.js',
+  docsDir: 'docs',
+  docsScriptsDir: 'docs/scripts',
+  docsStylesDir: 'docs/styles',
+  allDistStyles: 'docs/styles/*.css',
+  allDistScripts: 'docs/scripts/*.js',
   gulpFile: 'gulpfile.babel.js',
   allImages: 'src/images/*',
-  distImagesDir: 'docs/images',
+  docsImagesDir: 'docs/images',
 }
 
-gulp.task('clean', () => del(paths.distDir))
+gulp.task('clean', () => del(paths.docsDir))
 gulp.task('cleanStyles', () => del(paths.allDistStyles))
 gulp.task('cleanScripts', () => del(paths.allDistScripts))
 
@@ -33,7 +33,7 @@ gulp.task('watch', () => {
 gulp.task('scripts', ['cleanScripts'], () => {
   return gulp.src(paths.allSrcScripts)
     .pipe(babel())
-    .pipe(gulp.dest(paths.distScriptsDir))
+    .pipe(gulp.dest(paths.docsScriptsDir))
 })
 
 gulp.task('styles', ['cleanStyles'], () => {
@@ -43,13 +43,13 @@ gulp.task('styles', ['cleanStyles'], () => {
     .pipe(sass().on('error', sass.logError))
     .pipe(sourceMaps.write())
     .pipe(cssNano())
-    .pipe(gulp.dest(paths.distStylesDir))
+    .pipe(gulp.dest(paths.docsStylesDir))
 })
 
 gulp.task('images', () => {
   gulp.src(paths.allImages)
     .pipe(imagemin())
-    .pipe(gulp.dest(paths.distImagesDir))
+    .pipe(gulp.dest(paths.docsImagesDir))
 })
 
 gulp.task('build', ['clean', 'styles', 'scripts'])
