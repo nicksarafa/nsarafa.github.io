@@ -4,7 +4,6 @@ import sass from 'gulp-sass'
 import sourceMaps from 'gulp-sourcemaps'
 import del from 'del'
 import cssNano from 'gulp-cssnano'
-import sassdoc from 'sassdoc'
 import imagemin from 'gulp-imagemin'
 
 const paths = {
@@ -39,7 +38,6 @@ gulp.task('scripts', ['cleanScripts'], () => {
 gulp.task('styles', ['cleanStyles'], () => {
   return gulp.src(paths.allSrcStyles)
     .pipe(sourceMaps.init())
-    .pipe(sassdoc())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourceMaps.write())
     .pipe(cssNano())

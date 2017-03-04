@@ -1,6 +1,5 @@
 ### Custom template
 *.swp
-sassdoc
 
 ### Jekyll template
 _site/
