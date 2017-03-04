@@ -44,14 +44,6 @@ $fib: (
   10946,
 );
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  clear: both;
-  content: '';
-}
-
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
