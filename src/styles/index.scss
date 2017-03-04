@@ -52,18 +52,6 @@ code {
   font-family: Courier, Monaco, monospace;
 }
 
-nav {
-  display: inline;
-  float: left;
-  height: 100%;
-  max-width: nth($fib, 15);
-}
-
-main {
-  float: left;
-  max-width: nth($fib, 16);
-}
-
 li {
   list-style: none;
 }
@@ -77,8 +65,66 @@ svg {
   width: nth($fib, 9);
 }
 
-.clear::after {
-  clear: both;
-  content: '';
-  display: table;
+main {
+  display: flex;
+  flex-flow: row;
+  margin: 0px;
+  min-height: 800px;
+  padding: 0px;
+
+  & > article {
+    background: #dddd88;
+    border-radius: 7pt;
+    border: 1px solid #cccc33;
+    flex: 3 1 60%;
+    margin: 4px;
+    order: 2;
+    padding: 5px;
+  }
+
+  & > nav {
+    background: #ccccff;
+    border-radius: 7pt;
+    border: 1px solid #8888bb;
+    flex: 1 6 20%;
+    margin: 4px;
+    order: 1;
+    padding: 5px;
+  }
+
+  & > aside {
+    background: #ccccff;
+    border-radius: 7pt;
+    border: 1px solid #8888bb;
+    flex: 1 6 20%;
+    margin: 4px;
+    order: 3;
+    padding: 5px;
+  }
+}
+
+header, footer {
+  background: #ffeebb;
+  border-radius: 7pt;
+  border: 1px solid #eebb55;
+  display: block;
+  margin: 4px;
+  min-height: 100px;
+  padding: 5px;
+}
+
+@media all and (max-width: 640px) {
+  main {
+    flex-direction: column;
+  }
+
+  main > article, main > nav, main > aside {
+    /* Return to document order */
+    order: 0;
+  }
+
+  //main > nav, main > aside, header, footer {
+  //  max-height: 50px;
+  //  min-height: 50px;
+  //}
 }
