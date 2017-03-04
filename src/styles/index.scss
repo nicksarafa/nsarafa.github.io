@@ -68,9 +68,10 @@ code {
 }
 
 nav {
+  background: color(blue);
   display: flex;
   flex: 1;
-  height: nth($fib, 12);
+  height: 100%;
 
   div { margin: auto; }
 }
