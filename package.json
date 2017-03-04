@@ -6,7 +6,7 @@
   "author": "nsarafa",
   "license": "MIT",
   "scripts": {
-    "start": "gulp",
+    "start": "gulp & open ./dist/index.html",
     "test": "gulp test",
     "open": "open index.html"
   },
