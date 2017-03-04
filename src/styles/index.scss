@@ -52,15 +52,8 @@ $fib: (
   content: '';
 }
 
-html {
-  height: 100vh;
-  width: 100vw;
-}
-
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  margin: auto;
-  max-width: nth($fib, 16);
 }
 
 code {
@@ -68,12 +61,15 @@ code {
 }
 
 nav {
-  background: color(blue);
-  display: flex;
-  flex: 1;
+  display: inline;
+  float: left;
   height: 100%;
+  max-width: nth($fib, 15);
+}
 
-  div { margin: auto; }
+main {
+  float: left;
+  max-width: nth($fib, 16);
 }
 
 li {
@@ -84,14 +80,13 @@ a {
   text-decoration: none;
 }
 
-.clearfix {
-  clear: both;
-  content: '';
-  height: nth($fib, 8);
+svg {
+  height: nth($fib, 9);
+  width: nth($fib, 9);
 }
 
-.headshot {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
+.clear::after {
+  clear: both;
+  content: '';
+  display: table;
 }
