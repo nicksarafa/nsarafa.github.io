@@ -118,14 +118,8 @@ header, footer {
   }
 
   main > article, main > nav, main > aside {
-    /* Return to document order */
     order: 0;
   }
-
-  //main > nav, main > aside, header, footer {
-  //  max-height: 50px;
-  //  min-height: 50px;
-  //}
 }
 
 #menu {

@@ -10,10 +10,10 @@ window.onload = function () {
   menuButton.onclick = function (event) {
     event.preventDefault(event);
 
-    if (isMenuOpen === false) {
+    if (!isMenuOpen) {
       body.style.paddingRight = '330px';
       isMenuOpen = true;
-    } else if (isMenuOpen === true) {
+    } else if (isMenuOpen) {
       body.style.paddingRight = '0px';
       isMenuOpen = false;
     }
