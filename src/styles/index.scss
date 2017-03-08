@@ -126,3 +126,17 @@ header, footer {
   //  min-height: 50px;
   //}
 }
+
+#menu {
+  align-content: space-between;
+  align-items: center;
+  display: flex;
+  background: white;
+  bottom: 0;
+  height: nth($fib, 11);
+  left: 0;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
