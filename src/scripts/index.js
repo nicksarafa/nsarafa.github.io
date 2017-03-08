@@ -9,10 +9,10 @@ window.onload = function () {
     event.preventDefault(event)
 
     if(!isMenuOpen) {
-      body.style.paddingRight = '330px'
+      body.style.marginRight = '85%'
       isMenuOpen = true
     } else if (isMenuOpen) {
-      body.style.paddingRight = '0px'
+      body.style.marginRight = '0%'
       isMenuOpen = false
     }
   }
