@@ -46,7 +46,6 @@ $fib: (
 
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  padding-bottom: nth($fib, 11);
 }
 
 code {
@@ -112,20 +111,10 @@ header, footer {
   padding: 5px;
 }
 
-@media all and (max-width: 640px) {
-  main {
-    flex-direction: column;
-  }
-
-  main > article, main > nav, main > aside {
-    order: 0;
-  }
-}
-
 #menu {
   align-content: space-between;
   align-items: center;
-  display: flex;
+  display: none; // display: flex; on mobile
   background: white;
   bottom: 0;
   height: nth($fib, 11);
@@ -145,4 +134,27 @@ header, footer {
   right: 0;
   opacity: 0;
   z-index: 9;
+}
+
+@media all and (max-width: 640px) {
+  body {
+    background: blue;
+    padding-bottom: nth($fib, 11);
+  }
+
+  header {
+    display: none;
+  }
+
+  #menu {
+    display: flex;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  main > article, main > nav, main > aside {
+    order: 0;
+  }
 }
