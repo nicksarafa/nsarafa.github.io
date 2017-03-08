@@ -1,2 +1,11 @@
+'use strict';
+
 // scripts here
-"use strict";
+
+window.onload = function () {
+  var menuButton = document.getElementById('menuButton');
+
+  menuButton.onclick = function (event) {
+    alert('button clicked');
+  };
+};
