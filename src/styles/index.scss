@@ -46,6 +46,7 @@ $fib: (
 
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  padding-bottom: nth($fib, 11);
 }
 
 code {
