@@ -14,6 +14,7 @@
 $color: (
   blue      : rgba(40, 122, 169, 1),
   charcoal  : rgba(64, 64, 64, 1),
+  opaque    : rgba(241, 245, 247, .85),
   orange    : rgba(220, 99, 5, 1),
   silver    : rgba(192, 192, 192, 0.9),
   turquoise : rgba(33, 182, 166, 1),
@@ -46,6 +47,8 @@ $fib: (
 
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 code {
@@ -68,54 +71,42 @@ svg {
 main {
   display: flex;
   flex-flow: row;
-  margin: 0px;
-  min-height: 800px;
-  padding: 0px;
+  min-height: 50em;
 
   & > article {
-    background: #dddd88;
-    border-radius: 7pt;
-    border: 1px solid #cccc33;
     flex: 3 1 60%;
-    margin: 4px;
+    margin: .25em;
     order: 2;
-    padding: 5px;
+    padding: .25em;
   }
 
   & > nav {
-    background: #ccccff;
-    border-radius: 7pt;
-    border: 1px solid #8888bb;
     flex: 1 6 20%;
-    margin: 4px;
+    margin: .25em;
     order: 1;
-    padding: 5px;
+    padding: .25em;
   }
 
   & > aside {
-    background: #ccccff;
-    border-radius: 7pt;
-    border: 1px solid #8888bb;
     flex: 1 6 20%;
-    margin: 4px;
+    margin: .25em;
     order: 3;
-    padding: 5px;
+    padding: .25em;
   }
 }
 
 header, footer {
-  border: 1px solid #eebb55;
   display: block;
-  margin: 4px;
-  min-height: 100px;
-  padding: 5px;
+  margin: .25em;
+  min-height: 6em;
+  padding: .25em;
 }
 
 #menu {
   align-content: space-between;
   align-items: center;
   display: none; // display: flex; on mobile
-  background: white;
+  background: color(opaque);
   bottom: 0;
   height: nth($fib, 11);
   left: 0;
@@ -126,7 +117,6 @@ header, footer {
 }
 
 .hidden-menu {
-  background: blue;
   bottom: 0;
   position: absolute;
   height: 100%;
@@ -138,7 +128,6 @@ header, footer {
 
 @media all and (max-width: 640px) {
   body {
-    background: blue;
     padding-bottom: nth($fib, 11);
   }
 
