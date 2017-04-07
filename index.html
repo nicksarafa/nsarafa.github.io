@@ -1,16 +1,19 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- dist -->
     <!--<link rel="stylesheet" href="https://nsarafa.github.io/docs/styles/index.css" media="none" onload="if(media!='all')media='all'">-->
     <!--<script type="text/javascript" src="https://nsarafa.github.io/docs/scripts/index.js"></script>-->
 
+    <!-- add to link to load stylesheet after everything else => media="none" onload="if(media!='all')media='all'" -->
+
     <!-- dev -->
-    <link rel="stylesheet" href="docs/styles/index.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="docs/styles/index.css">
     <script type="text/javascript" src="docs/scripts/index.js"></script>
   </head>
-  <body id="body">
+  <body>
 
-    <!-- Header -->
+    <!-- Header // hidden on mobile -->
     <header>
       <!-- Desktop Menu -->
       <div id="menu">
@@ -24,7 +27,7 @@
     </header>
 
     <!-- Main -->
-    <main>
+    <main id="wrapper">
 
       <!-- Center -->
       <article>
@@ -90,7 +93,8 @@
     </footer>
 
     <!-- Mobile Menu -->
-    <div id="hidden-menu">
+    <div id="hidden-menu" style="opacity: 0;">
+      <span>hello :)</span>
     </div>
 
     <div class="menu">

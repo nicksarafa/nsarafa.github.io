@@ -1,10 +1,9 @@
 'use strict';
 
-// scripts here
+// scripts
 
 window.onload = function () {
   var isMenuOpen = false;
-  var body = document.getElementById('body');
   var menuToggle = document.getElementById('menu-toggle');
   var hiddenMenu = document.getElementById('hidden-menu');
 
@@ -12,12 +11,10 @@ window.onload = function () {
     event.preventDefault(event);
 
     if (!isMenuOpen) {
-      hiddenMenu.style.opacity = '100%';
-      body.style.marginRight = '85%';
+      hiddenMenu.style.opacity = '100';
       isMenuOpen = true;
     } else if (isMenuOpen) {
-      hiddenMenu.style.opacity = '0%';
-      body.style.marginRight = '0%';
+      hiddenMenu.style.opacity = '0';
       isMenuOpen = false;
     }
   };

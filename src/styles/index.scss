@@ -45,10 +45,17 @@ $fib: (
   10946,
 );
 
-body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+* {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition:    all 0.2s ease;
+  -ms-transition:     all 0.2s ease;
+  -o-transition:      all 0.2s ease;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 code {
@@ -118,12 +125,13 @@ header, footer {
 }
 
 #hidden-menu {
+  background: color(charcoal);
   bottom: 0;
   position: absolute;
   height: 100%;
   width: 85%;
   right: 0;
-  opacity: 0;
+  opacity: 0; // 1 if !isMenuOpen
   z-index: 9;
 }
 
