@@ -6,9 +6,9 @@
   "author": "nsarafa",
   "license": "MIT",
   "scripts": {
-    "start": "gulp & open index.html",
-    "test": "gulp test",
-    "open": "open index.html"
+    "deploy": "gulp critical",
+    "start": "gulp & open ./src/build.html",
+    "test": "gulp test"
   },
   "babel": {
     "presets": [

@@ -1,42 +1,15 @@
 # nsarafa.github.io
 
-Temp micro blog hosted via GitHub Pages
+# Scripts
 
-***
+`npm start`
 
-Template
+`npm test`
 
-👍
-- Date(s) 📅 
-- Location(s) [🌏, 🌎 , 🌏]
-- Thoughts 💬
+Run prior to deployment to generate index.html & optimize critical styles
 
-❄️
-- Looking forward to 🔭
-- Looking back on 🕰
-- Ideas 💡
+`npm deploy`
 
-🗺  Roadmap
-- Goal(s) Tracking
-  - Zero to..
-    - Health
-      - Mental
-      - Physical
-    - Collaboration
-    - Story Telling
-    - FullStack
-    - Automation
-    - Wealth
-    - AI
-    - Photographer
-    - Mentorship
-    - Menteeship (May not be a word)
-    - Some semblance of balance
-    - Community
-      - `needs definition`
-    - Open Source (- Self)
-    - Focus
+Page speed/usability tests (requires GOOGLE_API_KEY to be passed in command line)
 
-[Twitter](https://twitter.com/nsarafa_) 
-[LinkedIn](https://www.linkedin.com/in/nsarafa) 
-[Instagram](https://www.instagram.com/nsarafa_/) 
+`gulp psi` 
