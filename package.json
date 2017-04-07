@@ -6,7 +6,7 @@
   "author": "nsarafa",
   "license": "MIT",
   "scripts": {
-    "deploy": "gulp critical",
+    "deploy": "gulp deploy",
     "start": "gulp & open ./src/build.html",
     "test": "gulp test"
   },
@@ -27,6 +27,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-cssnano": "^2.1.2",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.1.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.2.0",

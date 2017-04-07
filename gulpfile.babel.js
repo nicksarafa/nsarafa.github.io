@@ -7,6 +7,7 @@ import cssNano from 'gulp-cssnano'
 import imagemin from 'gulp-imagemin'
 import psi from 'psi'
 import critical from 'critical'
+import htmlmin from 'gulp-htmlmin'
 
 const paths = {
   srcDir: 'src',
@@ -52,8 +53,11 @@ gulp.task('images', () => {
     .pipe(gulp.dest(paths.docsImagesDir))
 })
 
+/**
+ * @see https://github.com/addyosmani/critical
+ */
 gulp.task('critical', () => {
-  critical.generate({
+  return critical.generate({
     base: 'src',
     src: 'build.html',
     css: 'docs/styles/index.css',
@@ -65,6 +69,24 @@ gulp.task('critical', () => {
       { width: 641, height: 680 },
     ],
   })
+})
+
+/**
+ * @see https://github.com/kangax/html-minifier
+ */
+gulp.task('minify', function() {
+  return gulp.src('index.html')
+    .pipe(htmlmin({
+      removeComments: true,
+      collapseWhitespace: true,
+      removeEmptyAttributes: true,
+      removeEmptyElements: true,
+    }))
+    .pipe(gulp.dest('.'))
+})
+
+gulp.task('deploy', ['critical'], function() {
+  gulp.start('minify')
 })
 
 gulp.task('build', ['clean', 'styles', 'scripts'])

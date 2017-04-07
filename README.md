@@ -8,8 +8,8 @@
 
 Run prior to deployment to generate index.html & optimize critical styles
 
-`npm deploy`
+`npm run deploy`
 
 Page speed/usability tests (requires GOOGLE_API_KEY to be passed in command line)
 
-`gulp psi` 
+`GOOGLE_API_KEY=... gulp psi`
