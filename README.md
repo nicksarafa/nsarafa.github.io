@@ -6,6 +6,10 @@
 
 `npm test`
 
+Generate unoptimized site distribution to `docs/`
+
+`npm run build`
+
 Run prior to deployment to generate index.html & optimize critical styles
 
 `npm run deploy`

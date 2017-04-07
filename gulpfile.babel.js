@@ -60,14 +60,13 @@ gulp.task('critical', () => {
   return critical.generate({
     base: 'src',
     src: 'build.html',
-    css: 'docs/styles/index.css',
+    css: ['docs/styles/index.css'],
     dest: '../index.html',
     minify: true,
     inline: true,
-    dimensions: [
-      { width: 640, height: 480 },
-      { width: 641, height: 680 },
-    ],
+    extract: true,
+  }).error(function(err) {
+    console.log(err)
   })
 })
 
@@ -81,6 +80,8 @@ gulp.task('minify', function() {
       collapseWhitespace: true,
       removeEmptyAttributes: true,
       removeEmptyElements: true,
+      minifyCSS: true,
+      minifyJS: true,
     }))
     .pipe(gulp.dest('.'))
 })

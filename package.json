@@ -6,7 +6,8 @@
   "author": "nsarafa",
   "license": "MIT",
   "scripts": {
-    "deploy": "gulp deploy",
+    "build": "gulp build",
+    "deploy": "gulp build && gulp deploy",
     "start": "gulp & open ./src/build.html",
     "test": "gulp test"
   },
