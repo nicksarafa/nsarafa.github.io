@@ -99,7 +99,6 @@ main {
 }
 
 header, footer {
-  display: block;
   margin: .25em;
   min-height: 6em;
   padding: .25em;
@@ -122,12 +121,17 @@ header, footer {
 #hidden-menu {
   background: color(charcoal);
   bottom: 0;
-  position: absolute;
   height: 100%;
-  width: 85%;
-  right: 0;
   opacity: 0; // 1 if !isMenuOpen
+  position: absolute;
+  right: 0;
+  width: 85%;
   z-index: 9;
+}
+
+svg {
+  height: nth($fib, 10);
+  width: nth($fib, 10);
 }
 
 @media all and (max-width: 640px) {
