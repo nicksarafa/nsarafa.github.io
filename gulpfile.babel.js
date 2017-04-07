@@ -54,9 +54,10 @@ gulp.task('images', () => {
 
 gulp.task('critical', () => {
   critical.generate({
-    src: 'index.html',
+    base: 'src',
+    src: 'build.html',
     css: 'docs/styles/index.css',
-    dest: 'index-critical.html',
+    dest: '../index.html',
     minify: true,
     inline: true,
     dimensions: [
@@ -66,7 +67,7 @@ gulp.task('critical', () => {
   })
 })
 
-gulp.task('build', ['clean', 'styles', 'critical', 'scripts'])
+gulp.task('build', ['clean', 'styles', 'scripts'])
 
 gulp.task('default', ['watch'])
 
