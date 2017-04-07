@@ -3,8 +3,8 @@
 window.onload = function () {
   let isMenuOpen = false
   const body = document.getElementById('body')
-  const menuToggle = document.getElementById('menuToggle')
-  const hiddenMenu = document.getElementById('hiddenMenu')
+  const menuToggle = document.getElementById('menu-toggle')
+  const hiddenMenu = document.getElementById('hidden-menu')
 
   menuToggle.onclick = function(event) {
     event.preventDefault(event)

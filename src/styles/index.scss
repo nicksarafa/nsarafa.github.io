@@ -60,6 +60,7 @@ li {
 }
 
 a {
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -102,7 +103,7 @@ header, footer {
   padding: .25em;
 }
 
-#menu {
+.menu {
   align-content: space-between;
   align-items: center;
   display: none; // display: flex; on mobile
@@ -116,7 +117,7 @@ header, footer {
   z-index: 10;
 }
 
-.hidden-menu {
+#hidden-menu {
   bottom: 0;
   position: absolute;
   height: 100%;
@@ -135,7 +136,7 @@ header, footer {
     display: none;
   }
 
-  #menu {
+  .menu {
     display: flex;
   }
 
