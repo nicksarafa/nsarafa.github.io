@@ -1,4 +1,5 @@
 ### Custom template
+.env
 *.swp
 
 ### Jekyll template

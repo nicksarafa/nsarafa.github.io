@@ -5,6 +5,57 @@ import sourceMaps from 'gulp-sourcemaps'
 import del from 'del'
 import cssNano from 'gulp-cssnano'
 import imagemin from 'gulp-imagemin'
+import psi from 'psi'
+
+/**
+ * Measure site stats via Google PageSpeed Insights tool
+ * For more options @see https://github.com/addyosmani/psi/blob/8a6af0a66a5c19fc0234f608ea14f0b0dd77575d/test/fixtures/response.json
+ */
+
+const site = 'https://nsarafa.github.io/'
+
+gulp.task('psi-mobile', function () {
+  return psi(site, {
+    nokey: 'false',
+    key: process.env.GOOGLE_API_KEY,
+    strategy: 'mobile',
+  }).then(function (data) {
+    console.log('Mobile Speed score: ' + data.ruleGroups.SPEED.score)
+    console.log('Mobile Usability score: ' + data.ruleGroups.USABILITY.score)
+  })
+})
+
+gulp.task('psi-desktop', function () {
+  return psi(site, {
+    nokey: 'false',
+    key: process.env.GOOGLE_API_KEY,
+    strategy: 'desktop',
+  }).then(function (data) {
+    console.log('Desktop Speed score: ' + data.ruleGroups.SPEED.score)
+  })
+})
+
+gulp.task('psi-page-stats', function () {
+  return psi(site, {
+    nokey: 'false',
+    key: process.env.GOOGLE_API_KEY,
+  }).then(function (data) {
+      console.log('numberResources: ' + data.pageStats.numberResources)
+      console.log('numberHosts: ' + data.pageStats.numberHosts)
+      console.log('totalRequestBytes: ' + data.pageStats.totalRequestBytes)
+      console.log('numberStaticResources: ' + data.pageStats.numberStaticResources)
+      console.log('htmlResponseBytes: ' + data.pageStats.htmlResponseBytes)
+      console.log('cssResponseBytes: ' + data.pageStats.cssResponseBytes)
+      console.log('imageResponseBytes: ' + data.pageStats.imageResponseBytes)
+      console.log('javascriptResponseBytes: ' + data.pageStats.javascriptResponseBytes)
+      console.log('otherResponseBytes: ' + data.pageStats.otherResponseBytes)
+      console.log('numberJsResources: ' + data.pageStats.numberJsResources)
+      console.log('numberCssResources: ' + data.pageStats.numberCssResources)
+      console.log('Desktop Speed score: ' + data.ruleGroups.SPEED.score)
+  })
+})
+
+gulp.task('psi', ['psi-mobile', 'psi-desktop', 'psi-page-stats'])
 
 const paths = {
   srcDir: 'src',
