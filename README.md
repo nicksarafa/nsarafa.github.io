@@ -17,3 +17,5 @@ Run prior to deployment to generate index.html & optimize critical styles
 Page speed/usability tests (requires GOOGLE_API_KEY to be passed in command line)
 
 `GOOGLE_API_KEY=... gulp psi`
+
+All svgs copy pasta [evil icons](http://evil-icons.io/)
