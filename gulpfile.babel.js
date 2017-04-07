@@ -29,6 +29,7 @@ gulp.task('cleanScripts', () => del(paths.allDistScripts))
 gulp.task('watch', () => {
   gulp.watch(paths.allSrcStyles, ['styles'])
   gulp.watch(paths.allSrcScripts, ['scripts'])
+  gulp.watch('./src/build.html')
 })
 
 gulp.task('scripts', ['cleanScripts'], () => {
@@ -63,7 +64,7 @@ gulp.task('critical', () => {
     dest: '../index.html',
     minify: true,
     inline: true,
-    extract: true,
+    extract: false,
   }).error(function(err) {
     console.log(err)
   })
@@ -91,7 +92,9 @@ gulp.task('deploy', ['critical'], function() {
 
 gulp.task('build', ['styles', 'scripts'])
 
-gulp.task('default', ['watch'])
+gulp.task('default', ['watch'], function() {
+  gulp.start('deploy')
+})
 
 /**
  * Measure site stats via Google PageSpeed Insights tool

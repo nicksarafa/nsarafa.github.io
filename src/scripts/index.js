@@ -9,7 +9,7 @@ window.onload = function () {
     event.preventDefault(event)
 
     if(!isMenuOpen) {
-      hiddenMenu.style.opacity = '100'
+      hiddenMenu.style.opacity = '1'
       isMenuOpen = true
     } else if (isMenuOpen) {
       hiddenMenu.style.opacity = '0'
