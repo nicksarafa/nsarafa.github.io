@@ -8,7 +8,7 @@
   "scripts": {
     "build": "gulp build",
     "deploy": "gulp build && gulp deploy",
-    "start": "gulp & open ./src/build.html",
+    "start": "gulp & open ./index.html",
     "test": "gulp test"
   },
   "babel": {
