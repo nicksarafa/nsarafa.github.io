@@ -23,7 +23,6 @@ const paths = {
   docsImagesDir: 'docs/images',
 }
 
-gulp.task('clean', () => del(paths.docsDir))
 gulp.task('cleanStyles', () => del(paths.allDistStyles))
 gulp.task('cleanScripts', () => del(paths.allDistScripts))
 
@@ -90,7 +89,7 @@ gulp.task('deploy', ['critical'], function() {
   gulp.start('minify')
 })
 
-gulp.task('build', ['clean', 'styles', 'scripts'])
+gulp.task('build', ['styles', 'scripts'])
 
 gulp.task('default', ['watch'])
 
