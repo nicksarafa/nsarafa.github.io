@@ -71,11 +71,6 @@ a {
   text-decoration: none;
 }
 
-svg {
-  height: nth($fib, 9);
-  width: nth($fib, 9);
-}
-
 main {
   display: flex;
   flex-flow: row;
